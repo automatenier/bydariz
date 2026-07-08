@@ -1,0 +1,4810 @@
+/*
+Theme Name: Dealer
+Theme URI: https://dealer.ciuss.net
+Author URI: https://facebook.com/ciussgw
+Description: Tema WP iDealer dibuat untuk website dealer mobil dan motor yang menggunakan CMS Wordpress. Dilengkapi dengan post Event, Testimoni, dan Model Kendaraan
+Author: Ciuss Creative
+Version: 3.4.13
+Requires at least: 6.2
+Tested up to: 6.9.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: dealer, mobil, motor, jual mobil, jual motor
+Text Domain: dealer
+Copyright: (c) 2018 ciuss.com
+*/
+
+a,
+abbr,
+acronym,
+address,
+applet,
+b,
+big,
+blockquote,
+body,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+tt,
+u,
+ul,
+var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+body {
+    line-height: 1.4;
+    text-align: left;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+    content: "";
+    content: none;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a {
+    text-decoration: none;
+    outline: 0 !important;
+}
+body {
+    font-weight: 400;
+    font-size: 14px;
+}
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.dealer__clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* WIDGET SLIDER DEALER */
+
+.widget_dealer_model {
+    padding: 40px 0;
+}
+.dealer_model_img {
+    display: block;
+    min-height: 50px;
+}
+.dealer_model_price {
+    position: relative;
+}
+.dealer_model_price_box {
+    position: relative;
+    margin: -16px 0 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+.dealer_model_price_box span {
+    display: inline-block;
+    font-weight: 700;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.dealer_model_car_name {
+    padding: 0 25px;
+    margin: 0 0 10px;
+    font-size: 15px;
+}
+.span_title {
+    float: left;
+    width: calc(100% - 60px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.dealer_model_car_type {
+    float: right;
+}
+
+.dealer_model_after_title {
+    border-top: 1px solid rgba(120, 120, 120, 0.2);
+    padding: 15px 0;
+    margin: 0 25px;
+}
+
+.dealer_model_after_title i {
+    float: right;
+    width: 34px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    border-radius: 20px;
+}
+.dealer_model_car_status {
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 12px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.for_looping .dealer_model_box {
+    margin: 0 8px 16px;
+}
+.dealer_model_box img {
+    max-width: 100%;
+    display: block;
+}
+
+.single .widget_dealer_model {
+    padding: 40px 0 0;
+}
+
+/* WIDGET SLIDER RODA */
+.dealer__topslide {
+    position: relative;
+}
+.dealer__topslide:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 30%;
+    z-index: 1;
+}
+.show-topslide {
+    position: relative;
+    z-index: 2;
+}
+.roda__block {
+    margin: 0 10px 20px;
+}
+.dealer__topslide .roda__block {
+    margin: 0;
+}
+.model__litescape {
+    position: relative;
+    overflow: hidden;
+}
+.model__litescape img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.model__stat {
+    position: absolute;
+    bottom: 17px;
+    right: -25px;
+    z-index: 10;
+    color: #fff;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transform: rotate(-40deg);
+    width: 90px;
+    text-align: center;
+}
+.model__meta {
+    text-align: center;
+    padding: 20px 10px;
+    height: 95px;
+}
+.model__meta .roda__title {
+    font-weight: 400;
+    font-size: 16px;
+    height: 44px;
+}
+.roda__price {
+    padding: 5px 0;
+    font-size: 18px;
+}
+.model__trans {
+    font-size: 13px;
+}
+
+/* LISTING TIPE WP RODA */
+
+.listing__showroom {
+    margin: 0 10px 20px;
+    position: relative;
+    font-weight: 400;
+}
+.dealer__topslide .listing__showroom {
+    margin: 0;
+}
+.showroom__status {
+    position: absolute;
+    z-index: 20;
+    top: 10px;
+    left: 10px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.showroom__carlist {
+    position: relative;
+}
+
+.showroom__carlist img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.showroom__cardata {
+    padding: 15px;
+    height: 70px;
+}
+
+.showroom__cardata h3 {
+    font-weight: 400;
+    font-size: 18px;
+    max-height: 54px;
+    overflow: hidden;
+    margin-right: 45px;
+    line-height: 1.2;
+    margin: 0 0 4px;
+}
+
+.showroom__carmeta {
+    font-weight: 400;
+}
+.showroom__price {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 40px;
+    position: absolute;
+    bottom: -30px;
+    right: 20px;
+    z-index: 10;
+}
+
+.short__price {
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: -2px;
+    font-weight: 700;
+    padding: 15px 0 2px;
+    display: block;
+}
+
+.mill__price {
+    font-size: 11px;
+    line-height: 1.1;
+    display: block;
+}
+
+.widget_dealer_model .splide__pagination {
+    bottom: -28px;
+}
+.widget_dealer_model .splide__pagination__page {
+    transform: scale(1);
+    width: 20px;
+    height: 12px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+.widget_dealer_model .splide__pagination__page.is-active {
+    transform: scale(1);
+    width: 50px;
+}
+
+/* AGENT */
+.dealer__theagent {
+    padding: 0;
+    overflow: hidden;
+}
+#theagent {
+    padding: 80px 0;
+}
+.info__agen {
+    float: left;
+    width: 36%;
+    position: relative;
+}
+.info__agen img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 30px;
+}
+.nama__agen {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 15px;
+    padding: 0;
+    letter-spacing: -1px;
+    z-index: 10;
+    text-align: right;
+}
+.nama__agen .nickname {
+    position: relative;
+    display: inline-block;
+}
+.text__agen {
+    font-size: 16px;
+    text-align: right;
+    margin-left: 80px;
+}
+
+.dealer_social {
+    position: absolute;
+    right: -70px;
+    top: 150px;
+    width: 50px;
+}
+.dealer_social i {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 0 5px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.dealer__addblock {
+    float: right;
+    width: calc(64% - 90px);
+}
+.head__agen {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.3;
+    margin: 0 0 25px;
+    padding: 10px 0 0;
+    letter-spacing: -1px;
+    z-index: 10;
+}
+
+.dealer__works {
+    text-align: left;
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+.dealer__works .closehour {
+    color: #d33;
+    padding: 0 0 0 20px;
+}
+.dealer__works .openhour {
+    padding: 0 0 0 20px;
+}
+.addleft,
+.addright {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+}
+
+/* WIDGET AGENT RODA */
+
+#agentroda {
+    padding: 50px 0;
+    position: relative;
+}
+.wp_roda__agent {
+    text-align: center;
+}
+
+.wp_roda__agent .head__agen {
+    padding: 10px 0 20px;
+    position: relative;
+}
+.wp_roda__agent .head__agen:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 2px;
+}
+.wp_roda__agent .dealer__works {
+    text-align: center;
+    margin: 0 0 40px;
+}
+.wp_roda__social {
+    position: relative;
+}
+.wp_roda__social .dealer__fotoagen {
+    display: inline-block;
+    float: none;
+    width: 36%;
+    margin: 0 32% 40px;
+    position: relative;
+}
+
+.roda_agent_touch {
+    position: absolute;
+    width: 240px;
+    height: 60px;
+    transition: all 0.5s ease 0.1s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.roda_agent_touch a {
+    display: block;
+}
+.roda_agent_touch:nth-child(1) {
+    left: -300px;
+    top: 15%;
+}
+.roda_agent_touch:nth-child(2) {
+    right: -300px;
+    top: 15%;
+}
+.roda_agent_touch:nth-child(3) {
+    left: -360px;
+    top: 35%;
+}
+.roda_agent_touch:nth-child(4) {
+    right: -360px;
+    top: 35%;
+}
+.roda_agent_touch:nth-child(5) {
+    left: -360px;
+    top: 55%;
+}
+.roda_agent_touch:nth-child(6) {
+    right: -360px;
+    top: 55%;
+}
+.roda_agent_touch:nth-child(7) {
+    left: -300px;
+    top: 75%;
+}
+.roda_agent_touch:nth-child(8) {
+    right: -300px;
+    top: 75%;
+}
+.roda_agent_touch i {
+    display: inline-block;
+    float: left;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.02);
+    font-size: 25px;
+    border-right: 1px solid rgba(0, 0, 0, 0.07);
+}
+.roda_agent_touch a.wapi {
+    display: none;
+}
+.roda_agent_touch .roda_contact_right {
+    float: right;
+    width: calc(100% - 76px);
+    text-align: left;
+}
+.rc_text {
+    display: block;
+    padding: 10px 0 0;
+    font-size: 12px;
+}
+.rc_name {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* WIDGET AGENT PARALLAX RODA */
+
+.wp_roda__parallax {
+    position: relative;
+}
+.box__parallax {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+.half__parallax {
+    width: 50%;
+    position: relative;
+    float: none;
+}
+.effect__parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.left__clip {
+    padding: 120px 25%;
+    margin: 0;
+    z-index: 10;
+}
+.right__clip {
+    height: 100%;
+    margin: 0;
+    padding: 100px 25%;
+}
+
+.left__clip:after,
+.right__clip:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    opacity: 0.85;
+}
+.half__parallax .nama__agen {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 0 0 30px;
+}
+.half__parallax .text__agen {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 0;
+}
+.half__parallax .dealer__beaddress {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.4;
+    padding: 0;
+    margin: 0;
+}
+.half__parallax .dealer__beaddress i {
+    font-size: 45px;
+    display: block;
+    margin: 0 0 15px;
+}
+.half__parallax .dealer__beaddress .show_alamat {
+    margin: 0 auto;
+}
+
+.wp_roda__addblock {
+    padding: 50px 0;
+}
+.wp_roda__addouter {
+    margin: 0 -40px;
+}
+.wp_roda__addleft,
+.wp_roda__addright {
+    float: left;
+    width: 50%;
+}
+.wp_roda__addinner {
+    margin: 0 40px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* AGENT SHOWROOM */
+#agentshowroom {
+    padding: 50px 0;
+    position: relative;
+}
+#agentshowroom:after {
+    content: "";
+    background: rgba(0, 0, 0, 0.03);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+#agentshowroom .container {
+    position: relative;
+    z-index: 2;
+}
+.showroom__agent_outer {
+    margin: 0 -15px;
+}
+.showroom__agent {
+    float: right;
+    width: 25%;
+}
+.showroom__agentcall {
+    margin: 0 15px;
+    text-align: left;
+}
+.showroom__agentcall img {
+    display: block;
+    margin-top: -50px;
+}
+.showroom__nametext {
+    padding: 25px 30px;
+}
+.showroom__nametext .nama__agen {
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: 0;
+}
+.showroom__nametext .text__agen {
+    font-size: 15px;
+    line-height: 1.3;
+    text-align: left;
+    margin: 0;
+}
+
+.showroom__textblock {
+    width: 75%;
+    float: left;
+}
+.showroom__text_inner {
+    margin: 0 15px;
+    text-align: left;
+}
+
+.showroom__timework {
+    float: right;
+    width: 220px;
+}
+.showroom__timework i {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 45px;
+    float: left;
+}
+.showroom__timework i:before {
+    margin: 0;
+}
+.showroom__workday {
+    float: right;
+    width: calc(100% - 65px);
+}
+.dealer__theagent .showroom__workday .onandoff {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    background: none;
+}
+.showroom__textblock .dealer__clear {
+    font-size: 0;
+}
+.showroom__showcontact a {
+    display: inline-block;
+    height: 50px;
+    width: 65px;
+    margin-right: 8px;
+}
+.showroom__showcontact a.wapi {
+    display: none;
+}
+.showroom__showcontact a i {
+    display: block;
+    height: 50px;
+    width: 65px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+}
+.show__phone {
+    background: #df6161;
+}
+.show__whatsapp {
+    background: #4bcc7d;
+}
+.show__facebook {
+    background: #4c77dd;
+}
+.show__instagram {
+    background: #e14688;
+}
+.show__youtube {
+    background: #d75656;
+}
+.show__twitter {
+    background: #555;
+}
+.show__tiktok {
+    background: #24dff2;
+}
+.show__email {
+    background: #fbb854;
+}
+
+.showroom__workday .closehour,
+.showroom__workday .openhour {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 7px;
+    font-size: 10px;
+    border-radius: 20px;
+}
+
+.show__nolisting {
+    position: relative;
+}
+.slide_model_agen {
+    padding: 50px 0 0;
+}
+
+.showroom-agen-model .splide__pagination {
+    bottom: -40px;
+}
+
+.showroom-agen-model .splide__pagination__page {
+    transform: scale(1);
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+.showroom-agen-model .splide__pagination__page.is-active {
+    transform: scale(1);
+    width: 40px;
+}
+
+.showroom__addtext {
+    padding: 50px 0;
+}
+.show__addtext {
+    margin: 0 -30px;
+}
+.show__text {
+    font-size: 16px;
+    float: left;
+    width: calc(50% - 60px);
+    margin: 0 30px 30px;
+}
+
+/* LISTING TIPE SINGLE BLOCK */
+.dealer__bottom {
+    padding: 50px 0 35px;
+}
+.sgblock_outer {
+    margin: 0 -8px;
+}
+.listing__block {
+    width: 25%;
+    float: left;
+}
+.listing__inner {
+    margin: 0 8px 16px;
+}
+.sgblock__image {
+    display: block;
+    border-radius: 10px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.03);
+    margin: 0 0 10px;
+    overflow: hidden;
+}
+.sgblock__image img {
+    display: block;
+}
+.block__stat {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 15px;
+    bottom: 12px;
+    right: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 12px;
+    font-size: 14px;
+}
+.meta__inner {
+    position: relative;
+    border-radius: 5px;
+    margin: 0 0 12px;
+    padding: 25px;
+}
+.meta__inner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.meta__first:before {
+    opacity: 0.07;
+}
+.meta__second:before {
+    opacity: 0.04;
+}
+.inner__plus {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-size: 16px;
+}
+.sg__title {
+    font-size: 20px;
+    margin: 0 0 14px;
+}
+.sg__start {
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+}
+.sg__pricestart {
+    position: relative;
+    z-index: 2;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+/* LISTING TIPE CORNER */
+.listing_outer {
+    margin: 0 -10px;
+}
+.for_looping {
+    width: 25%;
+    float: left;
+}
+
+.listing_outer .dealer__clear.loop_list {
+    display: none;
+}
+.listing_outer .dealer__clear.loop4,
+.listing_outer .dealer__clear.loop8,
+.listing_outer .dealer__clear.loop12,
+.listing_outer .dealer__clear.loop16,
+.listing_outer .dealer__clear.loop20,
+.listing_outer .dealer__clear.loop24,
+.listing_outer .dealer__clear.loop28,
+.listing_outer .dealer__clear.loop32,
+.listing_outer .dealer__clear.loop36,
+.listing_outer .dealer__clear.loop40 {
+    display: block;
+}
+.listing_outer.corner__outer {
+    margin: 0 -15px;
+}
+.listing__corner {
+    margin: 0 15px 30px;
+    border-radius: 15px;
+    position: relative;
+    font-weight: 400;
+
+    border-radius: 6px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.dealer__topslide .listing__corner {
+    margin: 0;
+}
+.corner__status {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+}
+.corner__status span {
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    padding: 0 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.corner__title {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 24px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.corner__carlist {
+    position: relative;
+}
+
+.corner__carlist img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.corner__cardata {
+    padding: 20px 15px;
+}
+
+.corner__price {
+    margin: 0;
+    padding: 15px 0 0;
+}
+
+.price__start {
+    position: relative;
+    float: left;
+    width: calc(100% - 85px);
+    padding: 0 20px 0 0;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.price__togo {
+    display: inline-block;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 35px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+.price__st {
+    font-size: 14px;
+}
+.price__rl {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+}
+.corner__variant {
+    display: inline-block;
+}
+.corner__is_outer {
+    margin: 0 -8px;
+}
+.variant__type {
+    float: left;
+    width: calc(50% - 16px);
+    margin: 0 8px;
+    text-align: left;
+}
+.variant__color {
+    float: right;
+    width: calc(50% - 16px);
+    margin: 0 8px;
+    text-align: right;
+}
+.variant__top {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 6px;
+}
+.variant__name {
+    font-size: 13px;
+    margin: 0 0 6px;
+}
+
+.corner__carmeta {
+    padding: 10px 0;
+    font-size: 14px;
+}
+.meta__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.8;
+}
+.meta__name span {
+    opacity: 0.7;
+}
+
+/* EVENT */
+.dealer__event {
+    padding: 0;
+    width: 100%;
+}
+.show-event {
+    margin: 0 auto;
+}
+.event__open {
+    padding: 0;
+}
+
+.event_content {
+    width: 60%;
+    float: left;
+    padding: 80px 0;
+}
+.event_content h3 {
+    position: relative;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 1.2;
+    font-family: Poppins;
+    padding: 0 0 15px;
+    margin: 0 0 25px;
+    overflow: hidden;
+}
+.event_content h3:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 2px;
+}
+.event_info {
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Poppins;
+}
+.event_info span {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    margin: 0 12px 0 0;
+    border-radius: 6px;
+}
+.event_info a {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    margin: 0 8px 0 0;
+    border-radius: 6px;
+}
+.event_info a.wapi {
+    display: none;
+}
+.event__title {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    text-align: center;
+}
+.title__after {
+    position: relative;
+    height: 100%;
+}
+.title__after:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.8;
+    z-index: 1;
+}
+.event__title h4 {
+    position: absolute;
+    bottom: 45%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 1;
+    letter-spacing: -2px;
+    z-index: 2;
+}
+.event_date {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1;
+    z-index: 2;
+}
+.event_hour,
+.event_minutes,
+.event_seconds {
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+}
+.event_clock {
+    font-weight: bold;
+    position: absolute;
+    top: calc(55% + 30px);
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 3;
+}
+.event_content .fa-whatsapp {
+    margin-left: 14px;
+}
+
+.event__image {
+    width: 180px;
+    height: auto;
+    float: left;
+    margin: 0 20px 0 0;
+}
+.event__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+#clockz {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Header Agent */
+
+.sos__agent {
+    float: right;
+    margin-top: 27px;
+}
+.sos__agent .sos__icon {
+    float: left;
+}
+.dealer__agent {
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: 5px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.dealer__agent img {
+    width: 100%;
+}
+.sos__agent i {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 30px;
+    margin: 5px 0 5px 6px;
+    font-size: 20px;
+}
+
+.dealer__blog {
+    overflow: hidden;
+}
+
+/* Testimoni */
+.dealer__gallery {
+    position: relative;
+    overflow: hidden;
+}
+.dealer__gallery:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 80px;
+    z-index: 1;
+}
+.testimoni__slider {
+    padding: 0 0 40px;
+}
+.tema__showroom .testimoni__slider {
+    padding: 20px 0 14px;
+}
+.tes__headbox {
+    width: 32%;
+    float: left;
+    position: relative;
+    z-index: 1;
+}
+.tes__slide {
+    width: calc(68% - 20px);
+    float: right;
+    position: relative;
+    z-index: 2;
+}
+.tes__slideinner {
+    margin: 0;
+}
+.beforetesti__bg {
+    margin: 0;
+    height: 360px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.before__gal {
+    padding: 30px;
+}
+.gal__heading {
+    position: relative;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    font-family: Poppins;
+    margin: 0 0 15px;
+    padding: 10px 0 15px;
+    letter-spacing: -1px;
+    z-index: 10;
+}
+.gal__text {
+    margin: 0 0 30px;
+    font-size: 16px;
+}
+.gal__navi {
+    height: 44px;
+    line-height: 44px;
+    padding: 0 20px;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.testi__bg {
+    margin: 0;
+    overflow: hidden;
+    height: 360px;
+}
+.testi_img {
+    overflow: hidden;
+    display: block;
+}
+
+.mini__photo {
+    float: right;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+    overflow: hidden;
+}
+.gal__textbox {
+    padding: 25px 30px;
+    line-height: 1.2;
+    position: relative;
+}
+.gal__people {
+    float: left;
+    width: calc(100% - 80px);
+}
+.tesnama {
+    font-weight: bold;
+    margin: 0 0 3px;
+    font-size: 16px;
+}
+.lite__city {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    opacity: 0.7;
+}
+.gal__rating {
+    display: block;
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+.gal__rating i {
+    letter-spacing: -4px;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+}
+.gal__rating i:before {
+    margin: 0 !important;
+    width: 22px;
+}
+
+.galeritess .splide__arrows {
+    position: absolute;
+    bottom: 20px;
+    left: -120px;
+    width: 80px;
+    height: 40px;
+}
+.galeritess .splide__arrow--prev {
+    left: 0;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background: none;
+    border-radius: 0;
+    opacity: 1;
+}
+.galeritess .splide__arrow--next {
+    right: 0;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background: none;
+    border-radius: 0;
+    opacity: 1;
+}
+
+.show__gall {
+    position: relative;
+    z-index: 2;
+    min-height: 280px;
+}
+.show__galbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+}
+.show__galbg {
+    padding: 30px;
+    height: calc(100% - 66px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.show__galbg:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    border-left: 20px solid transparent;
+}
+.show__galhead {
+    position: relative;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 15px;
+}
+.show__galbg .gal__text {
+    margin: 0 0 90px;
+    font-size: 15px;
+}
+.show__galnavi {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid rgba(125, 125, 125, 0.25);
+    height: 36px;
+    padding: 15px 30px;
+}
+.show__galnavi a {
+    position: relative;
+    display: block;
+    height: 36px;
+    line-height: 36px;
+}
+.show__galnavi a:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    border-left: 12px solid transparent;
+}
+.show__galnavi span {
+    float: left;
+    display: inline-block;
+    height: 36px;
+    padding: 0 15px;
+}
+.show__galnavi i {
+    float: right;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    width: 36px;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+.show__galout {
+    margin: 0 -3px 0 335px;
+}
+.show__galloop {
+    width: 33.33%;
+    float: left;
+}
+.show__loopin {
+    margin: 0 3px 6px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+.show__loopin img {
+    display: block;
+}
+
+.show__loopover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 18px;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+.show__anima-3 .show__loopover {
+    opacity: 0.85;
+    padding: 150px 18px 18px;
+    transition: all 0.5s ease;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.show__loopin:hover .show__loopover {
+    opacity: 1;
+    padding: 150px 18px 18px;
+    transition: all 0.5s ease;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.show__loopover i {
+    width: 15px;
+}
+.show__loopover i:before {
+    font-size: 13px;
+    margin: 0;
+}
+.show__loopname {
+    font-size: 12px;
+}
+
+.show__galout .dealer__clear .dealer__clear {
+    display: none;
+}
+
+.show__galout .dealer__clear .dealer__clear.showgal-3 {
+    display: block;
+}
+
+.tema__showroom .commenttess {
+    padding: 40px 20px 20px;
+}
+.comment__show {
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.02);
+    transition: all 0.5s ease;
+}
+.comment__title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 0 15px;
+    transition: all 0.5s ease;
+}
+.comment__foex {
+    margin: 0 0 15px;
+    position: relative;
+    transition: all 0.5s ease;
+}
+.comment__ex {
+    font-size: 13px;
+    opacity: 0.7;
+    transition: all 0.5s ease;
+}
+.comment__foex i {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    font-size: 45px;
+    opacity: 0.5;
+    transform: rotate(10deg);
+    transition: all 0.5s ease;
+}
+.comment__foex img {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px 0 0;
+    float: left;
+}
+.comment__rate {
+    transition: all 0.5s ease;
+}
+.comment__rate i:before {
+    margin: 0;
+}
+.comment__peo {
+    float: right;
+    width: calc(100% - 100px);
+    margin: 0 40px 0 0;
+}
+.comment__ct {
+    opacity: 0.7;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.roda__gstout {
+    margin: 0 -10px;
+    padding: 40px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.roda__gstout .roda__clear {
+    display: none;
+}
+.gst__first {
+    float: left;
+    width: 66.66%;
+}
+.gst__second {
+    float: left;
+    width: 33.33%;
+}
+.gst__loop {
+    float: left;
+    width: 25%;
+}
+.gst__left {
+    float: right;
+    width: 50%;
+}
+.gst__inner {
+    margin: 0 10px 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.06);
+    height: 360px;
+    overflow: hidden;
+}
+.gst__loop .gst__inner {
+    height: auto;
+}
+.gst__center {
+    padding: 30px;
+    height: 300px;
+}
+.gst__photo {
+    position: relative;
+    padding: 0 0 24px;
+    min-height: 55px;
+}
+.gst__photo img {
+    width: 100%;
+    display: block;
+}
+.gst__rating {
+    position: absolute;
+    bottom: 6px;
+    right: 20px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 15px;
+    border-radius: 36px;
+    z-index: 1;
+}
+.gst__nama {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 25px 4px;
+}
+.gst__city {
+    font-size: 14px;
+    padding: 0 25px 25px;
+}
+
+/* Testimonial */
+.dealer_comment {
+    padding: 60px 0;
+    position: relative;
+}
+.dealer_comment:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.03);
+}
+.dealer_comment .container {
+    position: relative;
+    z-index: 2;
+}
+.comment__listing {
+    margin: 0;
+}
+.comment__box {
+}
+.comment__inner {
+    margin: 0 20px;
+    padding: 25px;
+}
+.comment_content {
+    margin: 0 0 15px;
+    text-align: center;
+}
+.comment_content img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin: 0 auto 15px;
+}
+.teshome__nickname {
+    font-size: 16px;
+    margin: 0 0 5px;
+}
+.teshome__right {
+    padding: 6px 0 0;
+}
+.teshome__from {
+    font-size: 14px;
+}
+.teshome__rating {
+    font-size: 18px;
+    margin: 0 0 8px;
+    text-align: center;
+}
+.teshome__rating i {
+    letter-spacing: -4px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+.teshome__excerpt {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* DEALER BLOG */
+.dealer__blog {
+    padding: 40px 0;
+    position: relative;
+}
+.tema__showroom .dealer__blog {
+    padding: 20px 0;
+}
+.blog__loop {
+    position: relative;
+}
+
+/* Slide Blog */
+.blog__headnews {
+    position: relative;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 15px;
+    padding: 10px 0 15px;
+    letter-spacing: -1px;
+}
+
+.slide_blog {
+    width: 100%;
+}
+.blog__slideloop {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 8px 3px 7px rgba(0, 0, 0, 0.05);
+    margin: 0 0 30px;
+}
+.blog__number {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    font-style: italic;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0.5;
+    color: #fff;
+    z-index: 2;
+}
+
+.blog__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+.blog__meta {
+    position: relative;
+    z-index: 2;
+    padding: 25px 25px 25px 0;
+    overflow: hidden;
+}
+.blog__publish {
+    margin: 0 0 5px;
+    font-size: 14px;
+}
+.blog__title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.next__blog {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 10px 0 20px;
+    border-radius: 6px;
+}
+.next__blog i {
+}
+
+/* SIDEBAR */
+
+#sidebar {
+    margin: 0 15px;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    #theagent {
+        padding: 60px 0;
+    }
+    .dealer__works {
+        font-size: 18px;
+        margin: 0 0 18px;
+    }
+    .info__agen img {
+        margin: 0 0 25px;
+    }
+    .nama__agen {
+        font-size: 25px;
+        margin: 0 0 12px;
+        letter-spacing: 0;
+    }
+    .text__agen {
+        font-size: 15px;
+        margin-left: 50px;
+    }
+
+    .roda_agent_touch:nth-child(1) {
+        left: -270px;
+    }
+    .roda_agent_touch:nth-child(2) {
+        right: -270px;
+    }
+    .roda_agent_touch:nth-child(3) {
+        left: -300px;
+    }
+    .roda_agent_touch:nth-child(4) {
+        right: -300px;
+    }
+    .roda_agent_touch:nth-child(5) {
+        left: -300px;
+    }
+    .roda_agent_touch:nth-child(6) {
+        right: -300px;
+    }
+    .roda_agent_touch:nth-child(7) {
+        left: -270px;
+    }
+    .roda_agent_touch:nth-child(8) {
+        right: -270px;
+    }
+
+    #agentshowroom {
+        padding: 25px 0;
+    }
+
+    .showroom__showcontact a {
+        height: 42px;
+        width: 55px;
+        margin-right: 6px;
+    }
+    .showroom__showcontact a i {
+        height: 42px;
+        width: 55px;
+        line-height: 42px;
+        font-size: 26px;
+    }
+    .showroom__timework {
+        width: 175px;
+    }
+    .showroom__workday {
+        width: calc(100% - 50px);
+    }
+    .showroom__timework i {
+        height: 42px;
+        width: 42px;
+        line-height: 42px;
+        font-size: 38px;
+    }
+    .dealer__theagent .showroom__workday .onandoff {
+        font-size: 14px;
+    }
+    .showroom__agentcall img {
+        margin-top: -25px;
+    }
+    .showroom__nametext .nama__agen {
+        font-size: 20px;
+    }
+    .showroom__nametext {
+        padding: 15px 20px;
+    }
+    .showroom__nametext .text__agen {
+        font-size: 13px;
+    }
+
+    .showroom__cardata {
+        padding: 18px 12px;
+        height: 75px;
+    }
+
+    .showroom__cardata h3 {
+        font-size: 18px;
+        max-height: 50px;
+        margin: 0 0 5px;
+    }
+    .showroom__carmeta {
+        font-size: 15px;
+    }
+    .showroom__price {
+        width: 64px;
+        height: 64px;
+        bottom: -18px;
+        right: 12px;
+    }
+
+    .short__price {
+        font-size: 28px;
+        line-height: 28px;
+        letter-spacing: -1.5px;
+        padding: 12px 0 0;
+    }
+
+    .mill__price {
+        font-size: 11px;
+    }
+
+    .sgblock_outer {
+        margin: 0 -8px;
+    }
+    .sgblock__image {
+        margin: 0 0 12px;
+    }
+    .listing__inner {
+        margin: 0 8px 16px;
+        padding: 0;
+    }
+    .block__stat {
+        bottom: 10px;
+        right: 10px;
+        height: 22px;
+        line-height: 22px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+    .sg__title {
+        font-size: 17px;
+        margin: 0 0 12px;
+    }
+    .meta__inner {
+        margin: 0 0 10px;
+        padding: 12px;
+    }
+    .sg__pricestart {
+        font-size: 22px;
+    }
+    .sg__start,
+    .inner__plus {
+        font-size: 15px;
+    }
+
+    .event_content {
+        padding: 60px 0;
+    }
+    .event_content h3 {
+        font-size: 34px;
+        padding: 0 0 11px;
+        margin: 0 0 18px;
+    }
+    .event_info a {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 11px;
+        margin: 0 6px 0 0;
+        border-radius: 4px;
+    }
+
+    .event__title h4 {
+        font-size: 74px;
+        letter-spacing: -1.5px;
+    }
+    .event_date {
+        font-size: 13px;
+    }
+    .event_clock {
+        top: calc(55% + 22px);
+    }
+    .event_hour,
+    .event_minutes,
+    .event_seconds {
+        font-size: 15px;
+    }
+
+    .dealer_comment {
+        padding: 30px 0;
+    }
+    .comment__inner {
+        margin: 0;
+        padding: 15px;
+    }
+    .show__galloop {
+        width: 33.33%;
+    }
+    .show__anima-7,
+    .show__anima-8 {
+        display: none;
+    }
+    .show__galout .dealer__clear .dealer__clear.showgal-3 {
+        display: block;
+    }
+    .show__galout .dealer__clear .dealer__clear.showgal-4 {
+        display: none;
+    }
+
+    .blog__number {
+        top: 12px;
+        left: 20px;
+        font-size: 56px;
+    }
+    .blog__meta {
+        padding: 20px 20px 20px 0;
+    }
+    .blog__publish {
+        font-size: 12px;
+    }
+    .blog__title {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 982px) {
+    .for_looping .dealer_model_box {
+        margin: 0 15px 30px;
+    }
+    .dealer_model_price_box {
+        margin: -23px 0 28px;
+    }
+    .dealer_model_price_box span {
+        height: 46px;
+        line-height: 46px;
+        padding: 0 28px;
+        font-size: 24px;
+    }
+    .dealer_model_car_name {
+        padding: 0 36px;
+        margin: 0 0 15px;
+        font-size: 20px;
+    }
+    .dealer_model_after_title {
+        padding: 12px 0;
+        margin: 0 36px;
+    }
+    .dealer_model_car_status {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 15px;
+        font-size: 15px;
+    }
+    .dealer_model_after_title i {
+        width: 46px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 15px;
+    }
+    .model__meta {
+        padding: 20px;
+        height: 120px;
+    }
+    .model__meta .roda__title {
+        font-size: 22px;
+        height: 60px;
+    }
+    .roda__price {
+        padding: 6px 0;
+        font-size: 30px;
+    }
+    .model__trans {
+        font-size: 16px;
+    }
+    .listing_outer {
+        margin: 0 -15px;
+    }
+	.listing_outer .dealer__clear.loop2,
+	.listing_outer .dealer__clear.loop6,
+	.listing_outer .dealer__clear.loop10,
+	.listing_outer .dealer__clear.loop14,
+	.listing_outer .dealer__clear.loop18,
+	.listing_outer .dealer__clear.loop22,
+	.listing_outer .dealer__clear.loop26,
+	.listing_outer .dealer__clear.loop30,
+	.listing_outer .dealer__clear.loop34,
+	.listing_outer .dealer__clear.loop38 {
+		display: block;
+	}
+    .roda__block {
+        margin: 0 15px 30px;
+    }
+    .listing__showroom {
+        margin: 0 15px 30px;
+    }
+    .showroom__status {
+        top: 13px;
+        left: 13px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 13px;
+        font-size: 15px;
+    }
+    .showroom__cardata h3 {
+        font-size: 24px;
+        max-height: 60px;
+        margin: 0 0 8px;
+    }
+
+    .info__agen {
+        float: none;
+        width: 50%;
+        margin: 0 auto;
+    }
+    .nama__agen {
+        font-size: 32px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+    .text__agen {
+        font-size: 18px;
+        margin: 0 0 40px;
+
+        text-align: center;
+    }
+    .dealer_social {
+        position: relative;
+        width: 100%;
+        right: 0;
+        text-align: center;
+        top: auto;
+        margin: 0 0 40px;
+    }
+    .dealer__addblock {
+        float: none;
+        width: auto;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .head__agen {
+        font-size: 50px;
+        margin: 0 0 35px;
+    }
+    .dealer__works {
+        font-size: 22px;
+        text-align: center;
+    }
+    .addleft,
+    .addright {
+        font-size: 18px;
+    }
+
+    .wp_roda__social .dealer__fotoagen {
+        width: 360px;
+        margin: 0 auto 40px;
+    }
+    .roda_agent_touch {
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+    }
+    .roda_agent_touch i {
+        font-size: 35px;
+    }
+    .roda_agent_touch:nth-child(1) {
+        left: -120px;
+    }
+    .roda_agent_touch:nth-child(2) {
+        right: -120px;
+    }
+    .roda_agent_touch:nth-child(3) {
+        left: -120px;
+    }
+    .roda_agent_touch:nth-child(4) {
+        right: -120px;
+    }
+    .roda_agent_touch:nth-child(5) {
+        left: -120px;
+    }
+    .roda_agent_touch:nth-child(6) {
+        right: -120px;
+    }
+    .roda_agent_touch:nth-child(7) {
+        left: -120px;
+    }
+    .roda_agent_touch:nth-child(8) {
+        right: -120px;
+    }
+    .box__parallax {
+        display: block;
+    }
+    .half__parallax {
+        width: 100%;
+    }
+    .half__parallax .dealer__beaddress {
+        float: none;
+    }
+    .wp_roda__addouter {
+        margin: 0;
+    }
+    .wp_roda__addleft,
+    .wp_roda__addright {
+        float: none;
+        width: 100%;
+    }
+    .wp_roda__addinner {
+        margin: 0 0 20px;
+        font-size: 18px;
+    }
+    .showroom__showcontact a.wapi {
+        display: inline-block;
+    }
+    .showroom__showcontact a.wame {
+        display: none;
+    }
+
+    .showroom__textblock {
+        width: 100%;
+        float: none;
+        padding: 0 0 80px;
+    }
+
+    .showroom__textblock .head__agen {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 35px;
+    }
+    .showroom__showcontact {
+        text-align: center;
+    }
+    .showroom__timework {
+        width: auto;
+        float: none;
+        text-align: center;
+        margin: 0 0 30px;
+    }
+    .showroom__timework i {
+        display: none;
+    }
+
+    .dealer__theagent .showroom__workday .onandoff {
+        font-size: 28px;
+        margin: 0 0 10px;
+    }
+    .showroom__workday .closehour,
+    .showroom__workday .openhour {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 12px;
+        font-size: 15px;
+    }
+
+    .showroom__showcontact a {
+        height: 50px;
+        width: 70px;
+        margin: 0 3px;
+    }
+    .showroom__showcontact a i {
+        height: 50px;
+        line-height: 50px;
+        width: 70px;
+    }
+
+    .showroom__agent {
+        float: none;
+        width: 100%;
+    }
+    .showroom__agentcall img {
+        margin: 0;
+    }
+
+    .showroom__agentcall {
+        background: none;
+        padding: 40px 0 30px;
+    }
+    .showroom__agentcall .dealer__fotoagen {
+        width: 360px;
+        margin: 0 auto 20px;
+    }
+    .showroom__nametext .nama__agen {
+        font-size: 32px;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+    .showroom__nametext .text__agen {
+        font-size: 18px;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .showroom__workday {
+        width: 100%;
+        float: none;
+    }
+
+    .listing__block {
+        width: 50%;
+    }
+
+    .sgblock_outer {
+        margin: 0 -15px;
+    }
+    .sgblock__image {
+        margin: 0 0 24px;
+    }
+    .listing__inner {
+        margin: 0 15px 30px;
+        padding: 0;
+    }
+    .block__stat {
+        bottom: 18px;
+        right: 18px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 18px;
+        font-size: 20px;
+    }
+    .sg__title {
+        font-size: 30px;
+        margin: 0 0 18px;
+    }
+    .meta__inner {
+        margin: 0 0 18px;
+        padding: 30px;
+    }
+    .sg__pricestart {
+        font-size: 40px;
+    }
+    .sg__start,
+    .inner__plus {
+        font-size: 18px;
+    }
+    .for_looping {
+        width: 50%;
+    }
+    .listing_outer.corner__outer {
+        margin: 0 -15px;
+    }
+    .listing__corner {
+        margin: 0 15px 30px;
+    }
+    .corner__title {
+        font-size: 25px;
+        padding: 30px 40px;
+    }
+    .corner__status span {
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        padding: 0 15px;
+        border-radius: 8px;
+    }
+    .corner__cardata {
+        padding: 35px 30px;
+    }
+    .corner__is_outer {
+        margin: 0 -15px;
+    }
+    .variant__type {
+        width: calc(50% - 30px);
+        margin: 0 15px;
+        text-align: left;
+    }
+    .variant__color {
+        width: calc(50% - 30px);
+        margin: 0 15px;
+        text-align: right;
+    }
+    .variant__top {
+        font-size: 30px;
+        margin: 0 0 12px;
+    }
+    .variant__name {
+        font-size: 18px;
+        margin: 0 0 12px;
+    }
+    .price__togo {
+        width: 58px;
+        height: 58px;
+        line-height: 58px;
+        font-size: 28px;
+    }
+    .price__st {
+        font-size: 20px;
+    }
+    .price__rl {
+        font-size: 30px;
+    }
+    .event_info a.wapi {
+        display: inline-block;
+    }
+    .event_info a.wame {
+        display: none;
+    }
+
+    .event_content {
+        padding: 56px 0;
+    }
+    .event_content h3 {
+        font-size: 30px;
+        padding: 0 0 15px;
+        margin: 0 0 20px;
+    }
+    .event_info a {
+        height: 44px;
+        line-height: 44px;
+        font-size: 18px;
+        padding: 0 20px 0 15px;
+    }
+
+    .event__title h4 {
+        font-size: 104px;
+        letter-spacing: -2px;
+    }
+    .event_date {
+        font-size: 22px;
+    }
+    .event_clock {
+        top: calc(55% + 30px);
+        letter-spacing: -1.3px;
+    }
+    .event_hour,
+    .event_minutes,
+    .event_seconds {
+        font-size: 25px;
+    }
+
+    .event_content {
+        padding: 70px 0;
+    }
+    .event_content h3 {
+        font-size: 38px;
+        padding: 0 0 20px;
+        margin: 0 0 24px;
+    }
+    .event_info a {
+        height: 50px;
+        line-height: 50px;
+        font-size: 26px;
+        padding: 0 24px 0 20px;
+    }
+
+    .event__title h4 {
+        font-size: 130px;
+        letter-spacing: -1.4px;
+    }
+    .event_date {
+        font-size: 28px;
+    }
+    .event_clock {
+        top: calc(55% + 38px);
+        letter-spacing: -1.6px;
+    }
+    .event_hour,
+    .event_minutes,
+    .event_seconds {
+        font-size: 30px;
+    }
+
+    .dealer__gallery:before {
+        height: 80px;
+    }
+    .testimoni__slider {
+        padding: 0 0 40px;
+    }
+    .tes__headbox {
+        width: auto;
+        float: none;
+    }
+    .tes__slide {
+        width: auto;
+        float: none;
+    }
+    .beforetesti__bg {
+        height: auto;
+        margin: 0 0 20px;
+    }
+    .before__gal {
+        padding: 30px;
+    }
+    .gal__heading {
+        font-size: 40px;
+        margin: 0 0 15px;
+        padding: 0;
+        letter-spacing: -1px;
+    }
+    .gal__text {
+        font-size: 18px;
+    }
+    .gal__navi {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 12px;
+        border-radius: 4px;
+    }
+    .tes__slideinner {
+        margin-right: 0;
+    }
+    .testi__bg {
+        height: auto;
+    }
+    .gal__people {
+        width: calc(100% - 100px);
+    }
+    .mini__photo {
+        width: 70px;
+        height: 70px;
+        border: 8px solid rgba(0, 0, 0, 0.05);
+        border-radius: 100px;
+    }
+    .gal__textbox {
+        padding: 30px;
+        font-size: 18px;
+    }
+    .gal__rating {
+        font-size: 22px;
+        margin: 0 0 10px;
+    }
+    .gal__rating i {
+        letter-spacing: -2px;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+    }
+    .gal__rating i:before {
+        width: 26px;
+    }
+    .tesnama {
+        margin: 0 0 5px;
+        font-size: 20px;
+    }
+    .lite__city {
+        font-size: 16px;
+    }
+    .dealer_comment {
+        padding: 80px 0;
+    }
+    .comment__inner {
+        margin: 0 20px;
+        padding: 0 25px;
+    }
+    .comment_content {
+        margin: 0 0 15px;
+    }
+    .comment_content img {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 12px;
+    }
+    .teshome__nickname {
+        font-size: 18px;
+        margin: 0 0 6px;
+    }
+    .teshome__right {
+        padding: 0;
+    }
+    .teshome__from {
+        font-size: 16px;
+    }
+    .teshome__rating {
+        font-size: 20px;
+        margin: 0 0 12px;
+    }
+    .teshome__rating i {
+        letter-spacing: -4px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+    }
+    .teshome__excerpt {
+        font-size: 16px;
+    }
+    .gst__first {
+        float: none;
+        width: 100%;
+    }
+    .gst__second {
+        display: none;
+    }
+    .gst__inner {
+        height: 430px;
+    }
+    .gst__inner.gst__center {
+        height: 370px;
+    }
+    .gst__nama {
+        font-size: 22px;
+    }
+    .gst__city {
+        font-size: 18px;
+    }
+    .gst__loop {
+        width: 50%;
+    }
+    .roda__gstout .roda__clear.gst__2 {
+        display: block;
+    }
+    .dealer_social.sos__icon a {
+        display: inline-block;
+    }
+    .show__galbox {
+        width: calc(50% - 20px);
+    }
+    .show__galbg {
+        padding: 40px;
+        height: calc(100% - 86px);
+    }
+    .show__galhead {
+        font-size: 45px;
+        margin: 0 0 25px;
+    }
+    .show__galbg .gal__text {
+        font-size: 20px;
+    }
+    .show__galout {
+        margin: 0 -3px 0 50%;
+    }
+    .show__galloop {
+        width: 50%;
+    }
+
+    .show__galout .dealer__clear .dealer__clear.showgal-3 {
+        display: none;
+    }
+    .show__galout .dealer__clear .dealer__clear.showgal-2,
+    .show__galout .dealer__clear .dealer__clear.showgal-4 {
+        display: block;
+    }
+
+    .blog__number {
+        top: 16px;
+        left: 26px;
+        font-size: 72px;
+    }
+    .blog__meta {
+        padding: 26px 26px 26px 0;
+    }
+    .blog__publish {
+        font-size: 14px;
+    }
+    .blog__title {
+        font-size: 23px;
+    }
+	.roda_agent_touch a.wapi {
+		display: block;
+	}
+	.roda_agent_touch a.wame {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 800px) {
+    .dealer_model_price_box {
+        margin: -20px 0 25px;
+    }
+    .dealer_model_price_box span {
+        height: 40px;
+        line-height: 40px;
+        padding: 0 25px;
+        font-size: 20px;
+    }
+    .dealer_model_car_name {
+        padding: 0 32px;
+        margin: 0 0 13px;
+        font-size: 19px;
+    }
+    .span_title {
+        width: calc(100% - 60px);
+    }
+    .dealer_model_after_title {
+        padding: 14px 0;
+        margin: 0 32px;
+    }
+    .dealer_model_car_status {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 15px;
+        font-size: 15px;
+    }
+    .dealer_model_after_title i {
+        width: 46px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 15px;
+    }
+    .model__meta {
+        padding: 16px;
+        height: 112px;
+    }
+    .model__meta .roda__title {
+        font-size: 20px;
+        height: 52px;
+    }
+    .roda__price {
+        padding: 6px 0;
+        font-size: 23px;
+    }
+    .model__trans {
+        font-size: 16px;
+    }
+    .showroom__status {
+        top: 13px;
+        left: 13px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 13px;
+        font-size: 15px;
+    }
+
+    .showroom__cardata {
+        padding: 25px 20px;
+        height: 100px;
+    }
+
+    .showroom__cardata h3 {
+        font-size: 24px;
+        max-height: 60px;
+        margin: 0 0 8px;
+    }
+    .showroom__carmeta {
+        font-size: 18px;
+    }
+    .showroom__price {
+        width: 80px;
+        height: 80px;
+        bottom: -25px;
+        right: 20px;
+    }
+
+    .short__price {
+        font-size: 38px;
+        line-height: 38px;
+        letter-spacing: -2px;
+        padding: 15px 0 0;
+    }
+
+    .mill__price {
+        font-size: 14px;
+    }
+    .effect__parallax {
+        background-size: 200% !important;
+    }
+
+    .sgblock_outer {
+        margin: 0 -15px;
+    }
+    .sgblock__image {
+        margin: 0 0 18px;
+    }
+    .listing__inner {
+        margin: 0 15px 30px;
+        padding: 0;
+    }
+    .block__stat {
+        bottom: 14px;
+        right: 14px;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .sg__title {
+        font-size: 25px;
+        margin: 0 0 18px;
+    }
+    .meta__inner {
+        margin: 0 0 14px;
+        padding: 30px;
+    }
+    .sg__pricestart {
+        font-size: 30px;
+    }
+    .sg__start,
+    .inner__plus {
+        font-size: 17px;
+    }
+
+    .listing_outer.corner__outer {
+        margin: 0 -12px;
+    }
+    .listing__corner {
+        margin: 0 12px 24px;
+    }
+    .corner__title {
+        font-size: 20px;
+        padding: 20px 30px;
+    }
+    .corner__status span {
+        height: 22px;
+        line-height: 22px;
+        font-size: 12px;
+        padding: 0 10px;
+        border-radius: 4px;
+    }
+    .corner__cardata {
+        padding: 25px 20px;
+    }
+    .corner__is_outer {
+        margin: 0 -12px;
+    }
+    .variant__type {
+        width: calc(50% - 24px);
+        margin: 0 12px;
+    }
+    .variant__color {
+        width: calc(50% - 24px);
+        margin: 0 12px;
+    }
+    .variant__top {
+        font-size: 24px;
+        margin: 0 0 10px;
+    }
+    .variant__name {
+        font-size: 15px;
+        margin: 0 0 10px;
+    }
+    .price__togo {
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+        font-size: 22px;
+    }
+    .price__st {
+        font-size: 16px;
+    }
+    .price__rl {
+        font-size: 24px;
+    }
+    .event_content {
+        padding: 50px 0;
+    }
+    .event_content h3 {
+        font-size: 26px;
+        padding: 0 0 14px;
+        margin: 0 0 17px;
+    }
+    .event_info a {
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        padding: 0 17px 0 14px;
+    }
+
+    .event__title h4 {
+        font-size: 90px;
+        letter-spacing: -1.7px;
+    }
+    .event_date {
+        font-size: 20px;
+    }
+    .event_clock {
+        top: calc(55% + 26px);
+        letter-spacing: -1.2px;
+    }
+    .event_hour,
+    .event_minutes,
+    .event_seconds {
+        font-size: 22px;
+    }
+
+    .testimoni__slider {
+        padding: 0 0 40px;
+    }
+    .beforetesti__bg {
+        height: auto;
+        margin: 0 0 20px;
+    }
+    .before__gal {
+        padding: 30px;
+    }
+    .gal__heading {
+        font-size: 40px;
+        margin: 0 0 15px;
+        padding: 0;
+        letter-spacing: -1px;
+    }
+    .gal__text {
+        margin: 0 0 20px;
+        font-size: 18px;
+    }
+    .gal__navi {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 12px;
+        border-radius: 4px;
+    }
+    .gal__people {
+        width: calc(100% - 80px);
+    }
+    .mini__photo {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(0, 0, 0, 0.05);
+    }
+    .gal__textbox {
+        padding: 25px;
+        font-size: 17px;
+    }
+    .gal__rating {
+        font-size: 18px;
+        margin: 0 0 5px;
+    }
+    .gal__rating i {
+        letter-spacing: -2px;
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+    }
+    .gal__rating i:before {
+        width: 22px;
+    }
+    .tesnama {
+        margin: 0 0 3px;
+        font-size: 16px;
+    }
+    .lite__city {
+        font-size: 14px;
+    }
+    .dealer_comment {
+        padding: 50px 0;
+    }
+    .comment__inner {
+        margin: 0 30px;
+        padding: 0 45px;
+    }
+    .comment_content {
+        margin: 0 0 25px;
+    }
+    .comment_content img {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 12px;
+    }
+    .teshome__nickname {
+        font-size: 20px;
+        margin: 0 0 8px;
+    }
+    .teshome__right {
+        padding: 0;
+    }
+    .teshome__from {
+        font-size: 16px;
+    }
+    .teshome__rating {
+        font-size: 24px;
+        margin: 0 0 12px;
+    }
+    .teshome__rating i {
+        letter-spacing: -4px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+    }
+    .teshome__excerpt {
+        font-size: 18px;
+    }
+    .gal__heading {
+        font-size: 30px;
+    }
+    .gal__text {
+        font-size: 16px;
+    }
+    .gst__nama {
+        font-size: 20px;
+    }
+    .gst__city {
+        font-size: 17px;
+    }
+    .gst__left {
+        float: none;
+        width: 100%;
+    }
+    .gst__left:nth-child(2) {
+        display: none;
+    }
+    .gst__inner,
+    .gst__loop .gst__inner {
+        height: auto;
+    }
+    .gst__inner.gst__center {
+        height: 100%;
+    }
+
+    .show__galhead {
+        font-size: 40px;
+        margin: 0 0 20px;
+    }
+    .show__galbg .gal__text {
+        font-size: 18px;
+    }
+
+    .blog__number {
+        top: 19px;
+        left: 26px;
+        font-size: 72px;
+    }
+    .blog__meta {
+        padding: 32px 32px 32px 0;
+    }
+    .blog__publish {
+        font-size: 17px;
+    }
+    .blog__title {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dealer_model_price_box {
+        margin: -20px 0 25px;
+    }
+    .dealer_model_price_box span {
+        height: 40px;
+        line-height: 40px;
+        padding: 0 25px;
+        font-size: 20px;
+    }
+    .dealer_model_car_name {
+        padding: 0 30px;
+        margin: 0 0 13px;
+        font-size: 18px;
+    }
+    .span_title {
+        width: calc(100% - 68px);
+    }
+    .dealer_model_after_title {
+        padding: 17px 0;
+        margin: 0 30px;
+    }
+    .dealer_model_car_status {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 14px;
+        font-size: 14px;
+    }
+    .dealer_model_after_title i {
+        width: 44px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .showroom__status {
+        top: 12px;
+        left: 12px;
+        height: 28px;
+        line-height: 28px;
+        padding: 0 12px;
+        font-size: 14px;
+    }
+    .showroom__cardata {
+        padding: 20px 15px;
+        height: 100px;
+    }
+
+    .showroom__cardata h3 {
+        font-size: 22px;
+        max-height: 55px;
+        margin: 0 0 7px;
+    }
+    .showroom__carmeta {
+        font-size: 16px;
+    }
+    .showroom__price {
+        width: 75px;
+        height: 75px;
+        bottom: -20px;
+        right: 16px;
+    }
+
+    .short__price {
+        font-size: 30px;
+        line-height: 30px;
+        letter-spacing: -1.5px;
+        padding: 16px 0 0;
+    }
+
+    .mill__price {
+        font-size: 15px;
+    }
+
+    .listing_outer.corner__outer {
+        margin: 0 -12px;
+    }
+    .listing__corner {
+        margin: 0 12px 24px;
+    }
+
+    .testimoni__slider {
+        padding: 0 0 40px;
+    }
+    .beforetesti__bg {
+        height: auto;
+        margin: 0 0 20px;
+    }
+    .before__gal {
+        padding: 30px;
+    }
+    .gal__heading {
+        font-size: 40px;
+        margin: 0 0 15px;
+        padding: 0;
+        letter-spacing: -1px;
+    }
+    .gal__text {
+        margin: 0 0 20px;
+        font-size: 18px;
+    }
+    .gal__navi {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 12px;
+        border-radius: 4px;
+    }
+    .tes__slideinner {
+        margin-right: 0;
+    }
+    .gal__people {
+        width: calc(100% - 80px);
+    }
+    .mini__photo {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(0, 0, 0, 0.05);
+    }
+    .gal__textbox {
+        padding: 25px;
+        font-size: 17px;
+    }
+    .gal__rating {
+        font-size: 18px;
+        margin: 0 0 5px;
+    }
+    .gal__rating i {
+        letter-spacing: -2px;
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+    }
+    .gal__rating i:before {
+        width: 22px;
+    }
+    .tesnama {
+        margin: 0 0 3px;
+        font-size: 16px;
+    }
+    .lite__city {
+        font-size: 13px;
+    }
+    .gst__nama {
+        font-size: 18px;
+        margin: 10px 25px 0;
+    }
+    .gst__city {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .for_looping .dealer_model_box {
+        margin: 0 12px 24px;
+    }
+    .dealer_model_price_box {
+        margin: -18px 0 22px;
+    }
+    .dealer_model_price_box span {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 22px;
+        font-size: 17px;
+    }
+    .dealer_model_car_name {
+        padding: 0 28px;
+        margin: 0 0 12px;
+        font-size: 17px;
+    }
+    .span_title {
+        width: calc(100% - 68px);
+    }
+    .dealer_model_after_title {
+        padding: 17px 0;
+        margin: 0 28px;
+    }
+    .dealer_model_car_status {
+        height: 28px;
+        line-height: 28px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+    .dealer_model_after_title i {
+        width: 40px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 13px;
+    }
+    .model__meta {
+        padding: 15px;
+        height: 108px;
+    }
+    .model__meta .roda__title {
+        font-size: 19px;
+        height: 48px;
+    }
+    .roda__price {
+        padding: 5px 0;
+        font-size: 22px;
+    }
+    .model__trans {
+        font-size: 15px;
+    }
+    .roda__block {
+        margin: 0 12px 24px;
+    }
+    .listing__showroom {
+        margin: 0 12px 24px;
+    }
+    .listing_outer {
+        margin: 0 -12px;
+    }
+    .show__galbg {
+        padding: 30px;
+        height: calc(100% - 66px);
+    }
+    .show__galhead {
+        font-size: 35px;
+        margin: 0 0 16px;
+    }
+    .show__galbg .gal__text {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .for_looping .dealer_model_box {
+        margin: 0 10px 20px;
+    }
+    .dealer_model_price_box {
+        margin: -17px 0 20px;
+    }
+    .dealer_model_price_box span {
+        height: 34px;
+        line-height: 34px;
+        padding: 0 20px;
+        font-size: 15px;
+    }
+    .dealer_model_car_name {
+        padding: 0 25px;
+        margin: 0 0 12px;
+        font-size: 16px;
+    }
+    .span_title {
+        width: calc(100% - 55px);
+    }
+    .dealer_model_after_title {
+        padding: 14px 0;
+        margin: 0 25px;
+    }
+    .dealer_model_car_status {
+        height: 28px;
+        line-height: 28px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+    .dealer_model_after_title i {
+        width: 40px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 13px;
+    }
+    .model__meta {
+        padding: 14px;
+        height: 105px;
+    }
+    .model__meta .roda__title {
+        font-size: 18px;
+        height: 46px;
+    }
+    .roda__price {
+        padding: 5px 0;
+        font-size: 21px;
+    }
+    .model__trans {
+        font-size: 14px;
+    }
+    .roda__block {
+        margin: 0 10px 20px;
+    }
+    .listing__showroom {
+        margin: 0 10px 20px;
+    }
+    .showroom__status {
+        top: 11px;
+        left: 11px;
+        height: 28px;
+        line-height: 28px;
+        padding: 0 11px;
+        font-size: 13px;
+    }
+    .head__agen {
+        font-size: 44px;
+        margin: 0 0 35px;
+    }
+    .info__agen {
+        width: 70%;
+    }
+    .left__clip,
+    .right__clip {
+        padding: 80px 40px;
+    }
+    .wp_roda__addinner {
+        margin: 0 0 18px;
+        font-size: 16px;
+    }
+    .showroom__agentcall .dealer__fotoagen {
+        width: 50%;
+    }
+    .show__text {
+        float: none;
+        width: calc(100% - 60px);
+    }
+    .showroom__textblock .head__agen {
+        font-size: 44px;
+    }
+    .showroom__showcontact a {
+        height: 50px;
+        width: 70px;
+        margin: 0 5px 10px;
+    }
+    .showroom__showcontact a i {
+        height: 50px;
+        line-height: 50px;
+        width: 70px;
+        font-size: 28px;
+    }
+    .sg__meta {
+        float: none;
+        width: 100%;
+    }
+
+    .sgblock_outer {
+        margin: 0 -12px;
+    }
+    .sgblock__image {
+        margin: 0 0 14px;
+    }
+    .listing__inner {
+        margin: 0 12px 24px;
+        padding: 0;
+    }
+    .block__stat {
+        bottom: 12px;
+        right: 12px;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 12px;
+        font-size: 14px;
+    }
+    .sg__title {
+        font-size: 20px;
+        margin: 0 0 14px;
+    }
+    .meta__inner {
+        margin: 0 0 12px;
+        padding: 25px;
+    }
+    .sg__pricestart {
+        font-size: 26px;
+    }
+    .sg__start,
+    .inner__plus {
+        font-size: 16px;
+    }
+
+    .listing_outer.corner__outer {
+        margin: 0 -10px;
+    }
+    .listing__corner {
+        margin: 0 10px 20px;
+    }
+    .corner__title {
+        font-size: 18px;
+        padding: 16px 26px;
+    }
+    .corner__status span {
+        height: 26px;
+        line-height: 26px;
+        font-size: 14px;
+        padding: 0 13px;
+        border-radius: 4px;
+    }
+    .corner__cardata {
+        padding: 16px 14px;
+    }
+    .corner__is_outer {
+        margin: 0 -10px;
+    }
+    .variant__type {
+        width: calc(50% - 20px);
+        margin: 0 10px;
+    }
+    .variant__color {
+        width: calc(50% - 20px);
+        margin: 0 10px;
+    }
+    .variant__top {
+        font-size: 20px;
+        margin: 0 0 8px;
+    }
+    .variant__name {
+        font-size: 15px;
+        margin: 0 0 8px;
+    }
+    .price__togo {
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 20px;
+    }
+    .price__st {
+        font-size: 15px;
+    }
+    .price__rl {
+        font-size: 22px;
+    }
+
+    .event_content {
+        padding: 42px 0;
+    }
+    .event_content h3 {
+        font-size: 22px;
+        padding: 0 0 11px;
+        margin: 0 0 14px;
+    }
+    .event_info a {
+        height: 36px;
+        line-height: 36px;
+        font-size: 16px;
+        padding: 0 14px 0 11px;
+    }
+
+    .event__title h4 {
+        font-size: 76px;
+        letter-spacing: -1.4px;
+    }
+    .event_date {
+        font-size: 16px;
+    }
+    .event_clock {
+        top: calc(55% + 22px);
+        letter-spacing: -1px;
+    }
+    .event_hour,
+    .event_minutes,
+    .event_seconds {
+        font-size: 18px;
+    }
+
+    .testimoni__slider {
+        padding: 0 0 40px;
+    }
+    .beforetesti__bg {
+        height: auto;
+        margin: 0 0 20px;
+    }
+    .before__gal {
+        padding: 30px;
+    }
+    .gal__heading {
+        font-size: 34px;
+        margin: 0 0 15px;
+        padding: 0;
+        letter-spacing: -1px;
+    }
+    .gal__text {
+        margin: 0 0 20px;
+        font-size: 16px;
+    }
+    .gal__navi {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 12px;
+        border-radius: 4px;
+    }
+    .tes__slideinner {
+        margin-right: -140px;
+    }
+    .gal__people {
+        width: calc(100% - 80px);
+    }
+    .mini__photo {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(0, 0, 0, 0.05);
+    }
+    .gal__textbox {
+        padding: 25px;
+        font-size: 17px;
+    }
+    .gal__rating {
+        font-size: 18px;
+        margin: 0 0 5px;
+    }
+    .gal__rating i {
+        letter-spacing: -2px;
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+    }
+    .gal__rating i:before {
+        width: 22px;
+    }
+    .tesnama {
+        margin: 0 0 3px;
+        font-size: 18px;
+    }
+    .lite__city {
+        font-size: 14px;
+    }
+
+    .dealer_comment {
+        padding: 40px 0;
+    }
+    .comment__inner {
+        margin: 0 20px;
+        padding: 0 35px;
+    }
+    .comment_content {
+        margin: 0 0 25px;
+    }
+    .comment_content img {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 12px;
+    }
+    .teshome__nickname {
+        font-size: 18px;
+        margin: 0 0 5px;
+    }
+    .teshome__right {
+        padding: 0;
+    }
+    .teshome__from {
+        font-size: 14px;
+    }
+    .teshome__rating {
+        font-size: 20px;
+        margin: 0 0 8px;
+    }
+    .teshome__rating i {
+        letter-spacing: -4px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+    }
+    .teshome__excerpt {
+        font-size: 16px;
+    }
+    .listing_outer {
+        margin: 0 -10px;
+    }
+    .gst__nama {
+        font-size: 16px;
+        margin: 8px 20px 0;
+    }
+    .gst__city {
+        font-size: 14px;
+        padding: 0 20px 20px;
+    }
+    .gst__photo {
+        padding: 0 0 16px;
+    }
+    .gst__rating {
+        bottom: 0px;
+        right: 16px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        font-size: 13px;
+    }
+    .show__galout {
+        margin: 0 -3px;
+    }
+    .show__galbox {
+        width: auto;
+        position: static;
+        margin: 0 0 20px;
+    }
+    .show__galhead {
+        font-size: 40px;
+        margin: 0 0 15px;
+    }
+    .show__galbg .gal__text {
+        font-size: 18px;
+        margin: 0 0 60px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dealer_model_price_box {
+        margin: -15px 0 18px;
+    }
+    .dealer_model_price_box span {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 18px;
+        font-size: 14px;
+    }
+    .dealer_model_car_name {
+        padding: 0 23px;
+        margin: 0 0 12px;
+        font-size: 15px;
+    }
+    .span_title {
+        width: calc(100% - 55px);
+    }
+    .dealer_model_after_title {
+        padding: 14px 0;
+        margin: 0 23px;
+    }
+    .dealer_model_car_status {
+        height: 26px;
+        line-height: 26px;
+        padding: 0 11px;
+        font-size: 12px;
+    }
+    .dealer_model_after_title i {
+        width: 38px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 12px;
+    }
+    .model__meta {
+        padding: 13px;
+        height: 102px;
+    }
+    .model__meta .roda__title {
+        font-size: 17px;
+        height: 44px;
+    }
+    .roda__price {
+        padding: 5px 0;
+        font-size: 20px;
+    }
+    .model__trans {
+        font-size: 14px;
+    }
+    .showroom__cardata {
+        padding: 18px 12px;
+        height: 75px;
+    }
+
+    .showroom__cardata h3 {
+        font-size: 18px;
+        max-height: 50px;
+        margin: 0 0 5px;
+    }
+    .showroom__carmeta {
+        font-size: 15px;
+    }
+    .showroom__price {
+        width: 64px;
+        height: 64px;
+        bottom: -18px;
+        right: 12px;
+    }
+
+    .short__price {
+        font-size: 28px;
+        line-height: 28px;
+        letter-spacing: -1.5px;
+        padding: 12px 0 0;
+    }
+
+    .mill__price {
+        font-size: 11px;
+    }
+    .half__parallax .dealer__beaddress {
+        width: 100%;
+    }
+
+    .sgblock_outer {
+        margin: 0 -10px;
+    }
+    .sgblock__image {
+        margin: 0 0 13px;
+    }
+    .listing__inner {
+        margin: 0 10px 20px;
+        padding: 0;
+    }
+    .block__stat {
+        bottom: 11px;
+        right: 11px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 11px;
+        font-size: 12px;
+    }
+    .sg__title {
+        font-size: 18px;
+        margin: 0 0 13px;
+    }
+    .meta__inner {
+        margin: 0 0 11px;
+        padding: 20px;
+    }
+    .sg__pricestart {
+        font-size: 24px;
+    }
+    .sg__start,
+    .inner__plus {
+        font-size: 17px;
+    }
+
+    .listing_outer.corner__outer {
+        margin: 0 -8px;
+    }
+    .listing__corner {
+        margin: 0 8px 16px;
+    }
+    .corner__title {
+        font-size: 17px;
+        padding: 15px 24px;
+    }
+    .corner__status span {
+        height: 24px;
+        line-height: 24px;
+        font-size: 13px;
+        padding: 0 12px;
+    }
+    .corner__cardata {
+        padding: 15px 13px;
+    }
+    .corner__is_outer {
+        margin: 0 -8px;
+    }
+    .variant__type {
+        width: calc(50% - 16px);
+        margin: 0 8px;
+    }
+    .variant__color {
+        width: calc(50% - 16px);
+        margin: 0 8px;
+    }
+    .variant__top {
+        font-size: 19px;
+        margin: 0 0 7px;
+    }
+    .variant__name {
+        font-size: 14px;
+        margin: 0 0 7px;
+    }
+    .price__togo {
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        font-size: 19px;
+    }
+    .price__st {
+        font-size: 15px;
+    }
+    .price__rl {
+        font-size: 21px;
+    }
+
+    .listing_outer {
+        margin: 0 -10px;
+    }
+
+    .blog__number {
+        top: 18px;
+        left: 30px;
+        font-size: 83px;
+    }
+    .blog__meta {
+        padding: 30px 30px 30px 0;
+    }
+    .blog__publish {
+        font-size: 16px;
+    }
+    .blog__title {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 533px) {
+    .for_looping .dealer_model_box {
+        margin: 0 8px 16px;
+    }
+    .dealer_model_price_box {
+        margin: -16px 0 20px;
+    }
+    .dealer_model_price_box span {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 20px;
+        font-size: 14px;
+    }
+    .dealer_model_car_name {
+        padding: 0 20px;
+        margin: 0 0 10px;
+        font-size: 14px;
+    }
+    .span_title {
+        width: calc(100% - 60px);
+    }
+    .dealer_model_after_title {
+        padding: 15px 0;
+        margin: 0 20px;
+    }
+    .dealer_model_car_status {
+        height: 24px;
+        line-height: 24px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+    .dealer_model_after_title i {
+        width: 34px;
+        height: 22px;
+        line-height: 22px;
+        font-size: 12px;
+    }
+    .model__meta {
+        padding: 12px;
+        height: 100px;
+    }
+    .model__meta .roda__title {
+        font-size: 16px;
+        height: 40px;
+    }
+    .roda__price {
+        padding: 5px 0;
+        font-size: 19px;
+    }
+    .model__trans {
+        font-size: 12px;
+    }
+    .roda__block {
+        margin: 0 8px 16px;
+    }
+    .listing__showroom {
+        margin: 0 8px 16px;
+    }
+    .showroom__status {
+        top: 10px;
+        left: 10px;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+    #theagent {
+        padding: 40px 0;
+    }
+    .head__agen {
+        font-size: 40px;
+        margin: 0 0 30px;
+    }
+    .dealer__works {
+        font-size: 20px;
+    }
+    .addleft,
+    .addright {
+        font-size: 16px;
+    }
+    .wp_roda__social .dealer__fotoagen {
+        width: 280px;
+    }
+    .roda_agent_touch {
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+    }
+    .roda_agent_touch i {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 28px;
+    }
+
+    .roda_agent_touch:nth-child(1) {
+        left: -80px;
+        top: 10%;
+    }
+    .roda_agent_touch:nth-child(2) {
+        right: -80px;
+        top: 10%;
+    }
+    .roda_agent_touch:nth-child(3) {
+        left: -80px;
+        top: 30%;
+    }
+    .roda_agent_touch:nth-child(4) {
+        right: -80px;
+        top: 30%;
+    }
+    .roda_agent_touch:nth-child(5) {
+        left: -80px;
+        top: 50%;
+    }
+    .roda_agent_touch:nth-child(6) {
+        right: -80px;
+        top: 50%;
+    }
+    .roda_agent_touch:nth-child(7) {
+        left: -80px;
+        top: 70%;
+    }
+    .roda_agent_touch:nth-child(8) {
+        right: -80px;
+        top: 70%;
+    }
+    .left__clip,
+    .right__clip {
+        padding: 60px 30px;
+    }
+    .half__parallax .nama__agen {
+        margin: 0 0 20px;
+        font-size: 26px;
+    }
+    .half__parallax .dealer__beaddress i {
+        font-size: 40px;
+    }
+    .half__parallax .dealer__beaddress {
+        font-size: 22px;
+    }
+    .effect__parallax {
+        background-size: 1200px !important;
+    }
+    .widget_dealer_model .splide__pagination {
+        bottom: -26px;
+    }
+    .widget_dealer_model .splide__pagination__page {
+        width: 16px;
+        height: 10px;
+        border-radius: 10px;
+    }
+    .widget_dealer_model .splide__pagination__page.is-active {
+        width: 40px;
+    }
+    .wp_roda__addinner {
+        margin: 0 0 15px;
+        font-size: 15px;
+    }
+    .showroom__agentcall .dealer__fotoagen {
+        margin: 0 auto;
+    }
+    .showroom__nametext .nama__agen {
+        font-size: 28px;
+        margin: 0 auto 20px;
+    }
+    .showroom__nametext .text__agen {
+        font-size: 16px;
+    }
+    .showroom__textblock .head__agen {
+        font-size: 40px;
+    }
+    .sgblock__image {
+        width: 100%;
+        float: none;
+        display: block;
+        margin: 0 0 20px;
+    }
+    .sgblock__meta {
+        width: 100%;
+        float: none;
+    }
+    .meta__inner {
+        height: auto;
+    }
+    .inner__plus {
+        display: inline-block;
+        margin: 0 30px 0 0;
+    }
+
+    .sgblock_outer {
+        margin: 0 -8px;
+    }
+    .sgblock__image {
+        margin: 0 0 12px;
+    }
+    .listing__inner {
+        margin: 0 8px 16px;
+        padding: 0;
+    }
+    .block__stat {
+        bottom: 10px;
+        right: 10px;
+        height: 22px;
+        line-height: 22px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+    .sg__title {
+        font-size: 17px;
+        margin: 0 0 12px;
+    }
+    .meta__inner {
+        margin: 0 0 10px;
+        padding: 12px;
+    }
+    .sg__pricestart {
+        font-size: 22px;
+    }
+    .sg__start,
+    .inner__plus {
+        font-size: 15px;
+    }
+
+    .listing_outer.corner__outer {
+        margin: 0 -8px;
+    }
+    .listing__corner {
+        margin: 0 8px 16px;
+    }
+    .corner__title {
+        font-size: 16px;
+        padding: 14px 24px;
+    }
+    .corner__status span {
+        height: 22px;
+        line-height: 22px;
+        font-size: 12px;
+        padding: 0 10px;
+    }
+    .corner__cardata {
+        padding: 14px 12px;
+    }
+    .corner__is_outer {
+        margin: 0 -8px;
+    }
+    .variant__type {
+        width: calc(50% - 16px);
+        margin: 0 8px;
+    }
+    .variant__color {
+        width: calc(50% - 16px);
+        margin: 0 8px;
+    }
+    .variant__top {
+        font-size: 18px;
+        margin: 0 0 6px;
+    }
+    .variant__name {
+        font-size: 13px;
+        margin: 0 0 6px;
+    }
+    .price__togo {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+    .price__st {
+        font-size: 14px;
+    }
+    .price__rl {
+        font-size: 20px;
+    }
+    .event_content {
+        padding: 38px 0;
+    }
+    .event_content h3 {
+        font-size: 20px;
+        padding: 0 0 10px;
+        margin: 0 0 13px;
+    }
+    .event_info a {
+        height: 34px;
+        line-height: 34px;
+        font-size: 15px;
+        padding: 0 13px 0 10px;
+    }
+
+    .event__title h4 {
+        font-size: 70px;
+        letter-spacing: -1.2px;
+    }
+    .event_date {
+        font-size: 15px;
+    }
+    .event_clock {
+        top: calc(55% + 20px);
+        letter-spacing: -0.9px;
+    }
+    .event_hour,
+    .event_minutes,
+    .event_seconds {
+        font-size: 16px;
+    }
+
+    .testimoni__slider {
+        padding: 0 0 40px;
+    }
+    .beforetesti__bg {
+        height: auto;
+        margin: 0 0 20px;
+    }
+    .before__gal {
+        padding: 30px;
+    }
+    .gal__heading {
+        font-size: 34px;
+        margin: 0 0 15px;
+        padding: 0;
+        letter-spacing: -1px;
+    }
+    .gal__text {
+        margin: 0 0 20px;
+        font-size: 16px;
+    }
+    .show__galhead {
+        font-size: 34px;
+    }
+    .show__galbg .gal__text {
+        font-size: 16px;
+    }
+    .gal__navi {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 12px;
+        border-radius: 4px;
+    }
+    .tes__slideinner {
+        margin-right: -140px;
+    }
+    .mini__photo {
+        width: 46px;
+        height: 46px;
+        border: 4px solid rgba(0, 0, 0, 0.05);
+    }
+    .gal__textbox {
+        padding: 20px;
+        font-size: 15px;
+    }
+    .gal__rating {
+        font-size: 15px;
+        margin: 0 0 5px;
+    }
+    .gal__rating i {
+        letter-spacing: -2px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+    }
+    .gal__rating i:before {
+        width: 18px;
+    }
+    .tesnama {
+        margin: 0 0 3px;
+        font-size: 15px;
+    }
+    .lite__city {
+        font-size: 13px;
+    }
+    .dealer_comment {
+        padding: 30px 0;
+    }
+    .comment__inner {
+        margin: 0 30px;
+        padding: 0;
+    }
+    .comment_content {
+        margin: 0 0 15px;
+    }
+    .comment_content img {
+        width: 55px;
+        height: 55px;
+        margin: 0 auto 15px;
+    }
+    .teshome__nickname {
+        font-size: 15px;
+        margin: 0 0 5px;
+    }
+    .teshome__right {
+        padding: 6px 0 0;
+    }
+    .teshome__from {
+        font-size: 14px;
+    }
+    .teshome__rating {
+        font-size: 17px;
+        margin: 0 0 8px;
+    }
+    .teshome__rating i {
+        letter-spacing: -4px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+    .teshome__excerpt {
+        font-size: 15px;
+    }
+    .listing_outer {
+        margin: 0 -8px;
+    }
+    .gst__nama {
+        font-size: 15px;
+        margin: 8px 15px 0;
+    }
+    .gst__city {
+        font-size: 13px;
+        padding: 0 15px 20px;
+    }
+    .gal__heading {
+        font-size: 34px;
+    }
+
+    .blog__headnews {
+        font-size: 24px;
+        margin: 0 0 10px;
+        padding: 10px 0 10px;
+    }
+    .next__blog {
+        top: 10px;
+        height: 28px;
+        line-height: 28px;
+        padding: 0 8px 0 16px;
+        font-size: 13px;
+    }
+    .blog__number {
+        top: 16px;
+        left: 26px;
+        font-size: 73px;
+    }
+    .blog__meta {
+        padding: 26px 26px 26px 0;
+    }
+    .blog__publish {
+        font-size: 15px;
+    }
+    .blog__title {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .for_looping .dealer_model_box {
+        margin: 0 5px 10px;
+    }
+    .widget_dealer_model {
+        padding: 20px 0;
+    }
+    .dealer_model_price_box span {
+        height: 24px;
+        line-height: 24px;
+        padding: 0 14px;
+        font-size: 12px;
+    }
+    .dealer_model_price_box {
+        margin: -12px 0 15px;
+    }
+    .dealer_model_car_name {
+        padding: 0 10px;
+    }
+    .span_title,
+    .dealer_model_car_type {
+        float: none;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .dealer_model_car_type {
+        font-size: 10px;
+    }
+    .dealer_model_after_title {
+        padding: 10px 0;
+        margin: 0 10px;
+    }
+    .for_looping {
+        width: 50%;
+    }
+    .for_looping .dealer_model_box {
+        margin: 0 5px 10px;
+    }
+
+    .model__meta {
+        padding: 10px;
+        height: 95px;
+    }
+    .model__meta .roda__title {
+        font-size: 15px;
+        height: 38px;
+    }
+    .roda__price {
+        padding: 4px 0;
+        font-size: 18px;
+    }
+    .model__trans {
+        font-size: 12px;
+    }
+    .roda__block {
+        margin: 0 8px 16px;
+    }
+
+    .listing__showroom {
+        margin: 0 8px 16px;
+    }
+
+    .listing__showroom {
+        margin: 5px;
+    }
+    .showroom__status {
+        top: 8px;
+        left: 8px;
+        height: 18px;
+        line-height: 18px;
+        padding: 0 6px;
+        font-size: 9px;
+    }
+    .showroom__cardata {
+        padding: 15px 10px;
+        height: 60px;
+    }
+
+    .showroom__cardata h3 {
+        font-size: 15px;
+        max-height: 40px;
+        margin: 0 0 4px;
+    }
+    .showroom__carmeta {
+        font-size: 12px;
+    }
+    .showroom__price {
+        width: 50px;
+        height: 50px;
+        bottom: -15px;
+        right: 10px;
+    }
+
+    .short__price {
+        font-size: 22px;
+        line-height: 22px;
+        letter-spacing: -1px;
+        padding: 10px 0 0;
+    }
+
+    .mill__price {
+        font-size: 9px;
+    }
+    #theagent {
+        padding: 20px 0;
+    }
+    .dealer__fotoagen {
+        text-align: center;
+    }
+    .info__agen img {
+        width: 50%;
+        margin: 0 auto 25px;
+    }
+    .info__agen {
+        width: 100%;
+    }
+    .nama__agen {
+        font-size: 24px;
+    }
+    .text__agen {
+        font-size: 15px;
+        margin: 0 0 20px;
+    }
+    .head__agen {
+        font-size: 32px;
+        margin: 0 0 20px;
+    }
+    .dealer__works {
+        font-size: 18px;
+    }
+    .addleft,
+    .addright {
+        font-size: 15px;
+    }
+    #agentroda {
+        padding: 20px 0;
+    }
+    .wp_roda__social .dealer__fotoagen {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .roda_agent_touch {
+        width: 45px;
+        height: 45px;
+    }
+    .roda_agent_touch i {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 25px;
+    }
+
+    .roda_agent_touch:nth-child(1) {
+        left: -75px;
+    }
+    .roda_agent_touch:nth-child(2) {
+        right: -75px;
+    }
+    .roda_agent_touch:nth-child(3) {
+        left: -75px;
+    }
+    .roda_agent_touch:nth-child(4) {
+        right: -75px;
+    }
+    .roda_agent_touch:nth-child(5) {
+        left: -75px;
+    }
+    .roda_agent_touch:nth-child(6) {
+        right: -75px;
+    }
+    .roda_agent_touch:nth-child(7) {
+        left: -75px;
+    }
+    .roda_agent_touch:nth-child(8) {
+        right: -75px;
+    }
+    .left__clip,
+    .right__clip {
+        padding: 60px 20px;
+    }
+    .half__parallax .nama__agen {
+        margin: 0 0 15px;
+        font-size: 24px;
+    }
+    .half__parallax .dealer__beaddress i {
+        font-size: 35px;
+    }
+    .half__parallax .dealer__beaddress {
+        font-size: 18px;
+    }
+    .widget_dealer_model.widget_model_roda {
+        padding: 20px 0 40px;
+    }
+    .widget_dealer_model .splide__pagination {
+        bottom: -26px;
+    }
+    .wp_roda__addinner {
+        font-size: 15px;
+    }
+    .wp_roda__addblock {
+        padding: 20px 0 0;
+    }
+    .dealer__bottom {
+        padding: 20px 0;
+    }
+    .showroom__textblock .head__agen {
+        margin: 0 auto 15px;
+    }
+    .dealer__theagent .showroom__workday .onandoff {
+        font-size: 18px;
+    }
+    .showroom__nametext .nama__agen {
+        font-size: 26px;
+        margin: 0 auto 15px;
+    }
+    .showroom__nametext .text__agen {
+        font-size: 15px;
+    }
+    .showroom__addtext {
+        padding: 20px 0;
+    }
+    .show__text {
+        font-size: 15px;
+        margin: 0 30px 20px;
+    }
+    .showroom__textblock .head__agen {
+        font-size: 32px;
+    }
+
+    .sgblock_outer {
+        margin: 0 -5px;
+    }
+    .sgblock__image {
+        margin: 0 0 10px;
+    }
+    .listing__inner {
+        margin: 0 5px 10px;
+        padding: 0;
+    }
+    .block__stat {
+        bottom: 8px;
+        right: 8px;
+        height: 18px;
+        line-height: 18px;
+        padding: 0 8px;
+        font-size: 9px;
+    }
+    .sg__title {
+        font-size: 14px;
+        margin: 0 0 10px;
+    }
+    .meta__inner {
+        margin: 0 0 8px;
+        padding: 10px;
+    }
+    .sg__pricestart {
+        font-size: 18px;
+    }
+    .sg__start,
+    .inner__plus {
+        font-size: 13px;
+    }
+
+    .listing_outer.corner__outer {
+        margin: 0 -5px;
+    }
+    .listing__corner {
+        margin: 0 5px 10px;
+    }
+    .corner__title {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+    .corner__status span {
+        height: 18px;
+        line-height: 18px;
+        font-size: 10px;
+        padding: 0 8px;
+    }
+    .corner__cardata {
+        padding: 12px 10px;
+    }
+    .corner__is_outer {
+        margin: 0 -5px;
+    }
+    .variant__type {
+        width: calc(50% - 10px);
+        margin: 0 5px;
+    }
+    .variant__color {
+        width: calc(50% - 10px);
+        margin: 0 5px;
+    }
+    .variant__top {
+        font-size: 17px;
+        margin: 0 0 4px;
+    }
+    .variant__name {
+        font-size: 11px;
+        margin: 0 0 4px;
+    }
+    .price__togo {
+        width: 36px;
+        height: 36px;
+        border-radius: 35px;
+        line-height: 38px;
+        font-size: 16px;
+    }
+    .price__st {
+        font-size: 12px;
+    }
+    .price__rl {
+        font-size: 16px;
+    }
+
+    .event_content {
+        padding: 20px 0;
+    }
+    .event_content h3 {
+        font-size: 16px;
+        padding: 0 0 8px;
+        margin: 0 0 10px;
+    }
+    .event_info a {
+        height: 30px;
+        line-height: 30px;
+        font-size: 13px;
+        padding: 0 10px 0 8px;
+    }
+
+    .event__title h4 {
+        font-size: 55px;
+        letter-spacing: -1px;
+    }
+    .event_date {
+        font-size: 12px;
+    }
+    .event_clock {
+        top: calc(55% + 16px);
+        letter-spacing: -0.7px;
+    }
+    .event_hour,
+    .event_minutes,
+    .event_seconds {
+        font-size: 13px;
+    }
+
+    .dealer__gallery:before {
+        height: 40px;
+    }
+    .testimoni__slider {
+        padding: 0 0 40px;
+    }
+    .beforetesti__bg {
+        margin: 0 0 20px;
+    }
+    .before__gal {
+        padding: 20px;
+    }
+    .gal__heading {
+        font-size: 26px;
+        margin: 0 0 10px;
+        padding: 0;
+        letter-spacing: -1px;
+    }
+    .gal__text {
+        margin: 0 0 20px;
+        font-size: 14px;
+    }
+    .show__galhead {
+        font-size: 26px;
+        margin: 0 0 10px;
+    }
+    .show__galbg .gal__text {
+        font-size: 14px;
+    }
+    .gal__navi {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 12px;
+        border-radius: 4px;
+    }
+    .tes__slideinner {
+        margin-right: -140px;
+    }
+    .gal__people {
+        width: calc(100% - 80px);
+    }
+    .mini__photo {
+        width: 46px;
+        height: 46px;
+        border: 4px solid rgba(0, 0, 0, 0.05);
+    }
+    .gal__textbox {
+        padding: 15px;
+    }
+    .gal__rating {
+        font-size: 13px;
+        margin: 0 0 5px;
+    }
+    .gal__rating i {
+        letter-spacing: -2px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+    }
+    .gal__rating i:before {
+        width: 16px;
+    }
+    .tesnama {
+        margin: 0 0 3px;
+        font-size: 14px;
+    }
+    .lite__city {
+        font-size: 12px;
+    }
+
+    .dealer_comment {
+        padding: 20px 0;
+    }
+    .comment__inner {
+        margin: 0 20px;
+        padding: 0 25px;
+    }
+    .comment_content {
+        margin: 0 0 15px;
+    }
+    .comment_content img {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 8px;
+    }
+    .teshome__nickname {
+        font-size: 14px;
+        margin: 0 0 2px;
+    }
+    .teshome__right {
+        padding: 0;
+    }
+    .teshome__from {
+        font-size: 13px;
+    }
+    .teshome__rating {
+        font-size: 16px;
+        margin: 0 0 8px;
+    }
+    .teshome__rating i {
+        letter-spacing: -4px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+    }
+    .teshome__excerpt {
+        font-size: 14px;
+    }
+    .roda__gstout {
+        margin: 0 -8px;
+    }
+    .gst__inner {
+        margin: 0 8px 16px;
+    }
+    .gst__rating {
+        bottom: 3px;
+        right: 10px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 6px;
+        font-size: 11px;
+    }
+    .wrapper__roda .dealer__gallery:before {
+        height: 80px;
+    }
+    .gal__heading {
+        font-size: 26px;
+    }
+    .showroom__agentcall {
+        padding: 20px 0 0;
+    }
+    .tema__showroom .commenttess {
+        padding: 20px 0 20px;
+        margin: 0 -20px;
+    }
+
+    .blog__headnews {
+        font-size: 22px;
+        height: 26px;
+        line-height: 26px;
+        margin: 0 0 5px;
+        padding: 10px 0 10px;
+    }
+    .next__blog {
+        height: 26px;
+        line-height: 26px;
+        font-size: 12px;
+        padding: 0 4px 0 8px;
+        border-radius: 4px;
+    }
+    .blog__number {
+        top: 13px;
+        left: 22px;
+        font-size: 62px;
+    }
+    .blog__meta {
+        padding: 15px 20px 15px 0;
+    }
+    .blog__publish {
+        font-size: 13px;
+    }
+    .blog__title {
+        font-size: 15px;
+    }
+    #agentshowroom {
+        border-top-width: 4px !important;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .blog__headnews {
+        font-size: 20px;
+        height: 24px;
+        line-height: 24px;
+        padding: 9px 0 9px;
+    }
+    .next__blog {
+        height: 24px;
+        line-height: 24px;
+        font-size: 11px;
+    }
+    .blog__number {
+        top: 12px;
+        left: 20px;
+        font-size: 56px;
+    }
+    .blog__meta {
+        padding: 14px 18px 14px 0;
+    }
+    .blog__publish {
+        font-size: 12px;
+    }
+    .blog__title {
+        font-size: 14px;
+    }
+}

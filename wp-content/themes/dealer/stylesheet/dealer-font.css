@@ -1,0 +1,100 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'dealer-font';
+  src: url('../font/dealer-font.eot?35989271');
+  src: url('../font/dealer-font.eot?35989271#iefix') format('embedded-opentype'),
+       url('../font/dealer-font.woff2?35989271') format('woff2'),
+       url('../font/dealer-font.woff?35989271') format('woff'),
+       url('../font/dealer-font.ttf?35989271') format('truetype'),
+       url('../font/dealer-font.svg?35989271#dealer-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'dealer-font';
+    src: url('../font/dealer-font.svg?35989271#dealer-font') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "dealer-font";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-star-empty:before { content: '\e75d'; } /* '' */
+.icon-dealer-machine:before { content: '\e800'; } /* '' */
+.icon-dealer-left:before { content: '\e801'; } /* '' */
+.icon-dealer-right:before { content: '\e802'; } /* '' */
+.icon-dealer-up:before { content: '\e803'; } /* '' */
+.icon-dealer-mail:before { content: '\e804'; } /* '' */
+.icon-dealer-tag:before { content: '\e805'; } /* '' */
+.icon-dealer-star-empty:before { content: '\e806'; } /* '' */
+.icon-dealer-home:before { content: '\e807'; } /* '' */
+.icon-dealer-dot:before { content: '\e808'; } /* '' */
+.icon-dealer-plus:before { content: '\e809'; } /* '' */
+.icon-dealer-clock:before { content: '\e80a'; } /* '' */
+.icon-dealer-star:before { content: '\e80b'; } /* '' */
+.icon-dealer-phone:before { content: '\e80c'; } /* '' */
+.icon-dealer-heart-half:before { content: '\e80d'; } /* '' */
+.icon-dealer-heart:before { content: '\e80e'; } /* '' */
+.icon-dealer-map:before { content: '\e80f'; } /* '' */
+.icon-dealer-calendar:before { content: '\e810'; } /* '' */
+.icon-dealer-facility:before { content: '\e811'; } /* '' */
+.icon-dealer-tire:before { content: '\e812'; } /* '' */
+.icon-dealer-interior:before { content: '\e813'; } /* '' */
+.icon-dealer-exterior:before { content: '\e814'; } /* '' */
+.icon-dealer-facebook:before { content: '\e815'; } /* '' */
+.icon-dealer-share:before { content: '\e816'; } /* '' */
+.icon-dealer-doc:before { content: '\e817'; } /* '' */
+.icon-dealer-pricelist:before { content: '\e818'; } /* '' */
+.icon-dealer-off:before { content: '\e819'; } /* '' */
+.icon-dealer-konsol:before { content: '\e81a'; } /* '' */
+.icon-dealer-arrow-right:before { content: '\e81b'; } /* '' */
+.icon-dealer-camera:before { content: '\e81c'; } /* '' */
+.icon-dealer-palette:before { content: '\e831'; } /* '' */
+.icon-dealer-menu:before { content: '\f0c9'; } /* '' */
+.icon-dealer-quote:before { content: '\f10e'; } /* '' */
+.icon-dealer-safety:before { content: '\f132'; } /* '' */
+.icon-dealer-youtube:before { content: '\f16a'; } /* '' */
+.icon-dealer-instagram:before { content: '\f16d'; } /* '' */
+.icon-dealer-car:before { content: '\f1b9'; } /* '' */
+.icon-dealer-dimention:before { content: '\f207'; } /* '' */
+.icon-dealer-motor:before { content: '\f21c'; } /* '' */
+.icon-dealer-whatsapp:before { content: '\f232'; } /* '' */
+.icon-dealer-comment:before { content: '\f27b'; } /* '' */
+.icon-dealer-telegram:before { content: '\f2c6'; } /* '' */
+.icon-star:before { content: '🔖'; } /* '\1f516' */
