@@ -1986,16 +1986,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
                 		<div class="embedmaps dealer__clear">
 			<iframe src="https://maps.google.com/maps?q=BYD+Gajah+mada,+Jl.+Gajah+Mada+No.14,+Jakarta&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>		</div>
-		<div class="copyright">
-			<div class="copyright" style="text-align:center;margin:0;padding:0;color:#fff">
-  BYD GAJAH MADA
-  <div style="font-size:70%;margin:0;padding:0">
-    © 2026 | Support by 
-    <a href="https://api.whatsapp.com/send?phone=6285168888236&amp;text=Halo%20webgue.id,%20Saya%20Mau%20Tanya%20Tentang%20Website" style="color:#fff;text-decoration:underline">
-      webgue.id
-    </a>
-  </div>
-</div>		</div>
+		<div class="copyright"></div>
 		<div class="vip__floating">
 		    <a class="vip__openmenu" href="https://bydariz.htsagency.id">HOME</a>
 	        <span class="vip__openmenu" onclick="vipmenu()">MENU</span>
@@ -2124,10 +2115,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	    var buttons = document.getElementsByClassName("menu-item-has-children");
 		[].forEach.call(buttons, function (el) {
 			el.addEventListener("click", function (event) {
-				// Mencegah event bubbling
-				event.stopPropagation();
-				// Toggle class "active" hanya pada elemen yang diklik
-				el.classList.toggle("active");
+				if (event.target.tagName !== 'A' || event.target.getAttribute('href') === '#') {
+					event.stopPropagation();
+					el.classList.toggle("active");
+				}
 			});
 		});
 
