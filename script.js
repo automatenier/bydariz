@@ -359,7 +359,7 @@ window.switchModel = function(modelKey) {
                 <td class="variant-name">${row.variant}</td>
                 <td class="variant-price">${row.price}</td>
                 <td class="variant-action">
-                    <a href="https://wa.me/6287881647878/?text=Halo%20Jordan%20Byd%20JAbodetabek%20(Brand%20Consultant%20BYD)%2C%20saya%20ingin%20tanya%20seputar%20${encodeURIComponent(data.name)}%20${encodeURIComponent(row.variant)}%20dengan%20harga%20${encodeURIComponent(row.price)}." target="_blank">
+                    <a href="https://wa.me/628118993993/?text=Halo%20Ariz%20Byd%20Gajah%20Mada%20(Sales%20Consultant%20BYD)%2C%20saya%20ingin%20tanya%20seputar%20${encodeURIComponent(data.name)}%20${encodeURIComponent(row.variant)}%20dengan%20harga%20${encodeURIComponent(row.price)}." target="_blank">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </td>
@@ -370,7 +370,7 @@ window.switchModel = function(modelKey) {
 
     const testDriveBtn = document.querySelector('.widget-card .btn-success');
     if (testDriveBtn) {
-        testDriveBtn.href = `https://wa.me/6287881647878/?text=Halo%20Jordan%20Byd%20JAbodetabek%20(Brand%20Consultant%20BYD)%2C%20saya%20ingin%20menjadwalkan%20Test%20Drive%20untuk%20${encodeURIComponent(data.name)}`;
+        testDriveBtn.href = `https://wa.me/628118993993/?text=Halo%20Ariz%20Byd%20Gajah%20Mada%20(Sales%20Consultant%20BYD)%2C%20saya%20ingin%20menjadwalkan%20Test%20Drive%20untuk%20${encodeURIComponent(data.name)}`;
     }
 
     // Update Youtube Embed and Button
@@ -781,7 +781,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const timing = document.getElementById('form-timing').value;
             const tenor = document.getElementById('form-tenor').value;
 
-            let message = `Halo *Jordan Byd Jabodetabek (Brand Consultant BYD)*,\n`;
+            let message = `Halo *Ariz Byd Gajah Mada (Sales Consultant BYD)*,\n`;
             
             if (service === 'Test Drive') {
                 message += `Saya tertarik untuk menjadwalkan *Test Drive* mobil BYD melalui website.\n\n`;
@@ -811,7 +811,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 message += `Mohon dibantu info syarat pemesanan dan promo penawaran terbaiknya. Terima kasih.`;
             }
 
-            const waNumber = '6287881647878';
+            const waNumber = '628118993993';
             const waUrl = `https://wa.me/${waNumber}/?text=${encodeURIComponent(message)}`;
             
             window.open(waUrl, '_blank');
