@@ -2115,7 +2115,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	    var buttons = document.getElementsByClassName("menu-item-has-children");
 		[].forEach.call(buttons, function (el) {
 			el.addEventListener("click", function (event) {
-				if (event.target.tagName !== 'A' || event.target.getAttribute('href') === '#') {
+				const clickedLink = event.target.closest('a');
+				if (!clickedLink || clickedLink.getAttribute('href') === '#') {
 					event.stopPropagation();
 					el.classList.toggle("active");
 				}
