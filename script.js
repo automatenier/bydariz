@@ -462,6 +462,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // === INTERCEPT MODEL CATALOG LINKS TO PREVENT 404 ===
+    document.querySelectorAll('a[href*="/model/"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            let modelName = link.getAttribute('aria-label') || link.textContent.trim();
+            if (!modelName) {
+                const img = link.querySelector('img');
+                if (img) {
+                    modelName = img.getAttribute('alt') || img.getAttribute('title');
+                }
+            }
+            if (!modelName) modelName = "BYD";
+            
+            // Clean up name
+            modelName = modelName.replace(/\s+/g, ' ').trim();
+            
+            const message = `Halo Ariz, saya ingin informasi brosur, spesifikasi, dan promo terbaru untuk mobil *${modelName}*.`;
+            const waUrl = `https://wa.me/628118993993/?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+        });
+    });
+
     // === MOBILE MENU TOGGLE ===
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
