@@ -435,6 +435,33 @@ window.switchModel = function(modelKey) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    // === CLIENT-SIDE SEARCH ===
+    const searchForm = document.getElementById('wipsearchform');
+    const searchInput = searchForm ? searchForm.querySelector('.spo') : null;
+    if (searchForm && searchInput) {
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = searchInput.value.trim().toLowerCase();
+            const loops = document.querySelectorAll('.listing__loop');
+            loops.forEach(loop => {
+                const titleEl = loop.querySelector('.listing__title a');
+                if (titleEl) {
+                    const titleText = titleEl.textContent.toLowerCase();
+                    if (titleText.includes(query)) {
+                        loop.style.display = 'block';
+                    } else {
+                        loop.style.display = 'none';
+                    }
+                }
+            });
+            // Scroll to models section
+            const targetSection = document.querySelector('.viper__listing');
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
+
     // === MOBILE MENU TOGGLE ===
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
