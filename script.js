@@ -463,8 +463,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === INTERCEPT MODEL CATALOG LINKS TO PREVENT 404 ===
-    document.querySelectorAll('a[href*="/model/"]').forEach(link => {
-        link.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href*="/model/"]');
+        if (link) {
             e.preventDefault();
             let modelName = link.getAttribute('aria-label') || link.textContent.trim();
             if (!modelName) {
@@ -481,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = `Halo Ariz, saya ingin informasi brosur, spesifikasi, dan promo terbaru untuk mobil *${modelName}*.`;
             const waUrl = `https://wa.me/628118993993/?text=${encodeURIComponent(message)}`;
             window.open(waUrl, '_blank');
-        });
+        }
     });
 
     // === MOBILE MENU TOGGLE ===
